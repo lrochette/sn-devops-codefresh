@@ -16,6 +16,32 @@ CodefreshIntegrationHandler.prototype = Object.extendsObject(global.AbstractAjax
             return true;
         return false;
     },
+
+	_getPipelineUrl : function(toolUrl, projectId, projectName, pipelineId, pipelineFullName) {
+		var pipelineName = pipelineFullName.substr(pipelineFullName.indexOf('/') +1);
+		return toolUrl + "/pipelines/edit/workflow?id= " + pipelineId +
+			"&pipeline=" + pipelineName +
+			"&projects=" + projectName +
+			"&projectId=" + projectId;
+	},
+	
+    processPipelineDiscoveryApiResponse: function(toolUrl, pipelinePayload) {
+        var pipelines = [];
+        sn_devops.DevOpsLogger.log("CodefreshIntegrationHandler: processPipelineDiscoveryApiResponse -pipelinePayload: " + pipelinePayload);
+        var pipelinePayloadObject = JSON.parse(pipelinePayload);
+        pipelinePayloadObject.docs.forEach(function(codefreshPipeline) {
+			
+            var pipeline = {
+                name: codefreshPipeline.metadata.name,
+                url: this._getPipelineUrl(toolUrl, 
+							codefreshPipeline.metadata.projectId, codefreshPipeline.metadata.project,
+							codefreshPipeline.metadata.id, codefreshPipeline.metadata.name)
+            };
+            pipelines.push(pipeline);
+        }, this);
+        return pipelines;
+    },
+
 	
     type: 'CodefreshIntegrationHandler'
 });]]></script>
@@ -23,13 +49,13 @@ CodefreshIntegrationHandler.prototype = Object.extendsObject(global.AbstractAjax
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-01-29 04:25:55</sys_created_on>
         <sys_id>7f802d302f86201099b5d4a72799b6d8</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>CodefreshIntegrationHandler</sys_name>
         <sys_package display_value="Codefresh" source="x_409723_codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_scope>
         <sys_update_name>sys_script_include_7f802d302f86201099b5d4a72799b6d8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-01-29 04:25:55</sys_updated_on>
+        <sys_updated_on>2021-02-03 04:06:02</sys_updated_on>
     </sys_script_include>
 </record_update>
