@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_409723_codefresh.CodefreshIntegrationHandler</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Implements extension point sn_devops.DevOpsOrchestrationToolIntegrationHandler&#13;
+DevOpsOrchestrationToolIntegrationHandler - Endpoint Interface to determine right tool handler</description>
+        <name>CodefreshIntegrationHandler</name>
+        <script><![CDATA[var CodefreshIntegrationHandler = Class.create();
+CodefreshIntegrationHandler.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+	handleTool: function(toolName) {
+        if (!gs.nil(toolName) && toolName == 'x_409723_codefresh_Codefresh')
+            return true;
+        return false;
+    },
+
+	_getPipelineUrl : function(toolUrl, projectId, projectName, pipelineId, pipelineFullName) {
+		var pipelineName = pipelineFullName.substr(pipelineFullName.indexOf('/') +1);
+		return toolUrl + "/pipelines/edit/workflow?id= " + pipelineId +
+			"&pipeline=" + pipelineName +
+			"&projects=" + projectName +
+			"&projectId=" + projectId;
+	},
+	
+    processPipelineDiscoveryApiResponse: function(toolUrl, pipelinePayload) {
+        var pipelines = [];
+        sn_devops.DevOpsLogger.log("CodefreshIntegrationHandler: processPipelineDiscoveryApiResponse -pipelinePayload: " + pipelinePayload);
+        var pipelinePayloadObject = JSON.parse(pipelinePayload);
+        pipelinePayloadObject.docs.forEach(function(codefreshPipeline) {
+			
+            var pipeline = {
+                name: codefreshPipeline.metadata.name,
+                url: this._getPipelineUrl(toolUrl, 
+							codefreshPipeline.metadata.projectId, codefreshPipeline.metadata.project,
+							codefreshPipeline.metadata.id, codefreshPipeline.metadata.name)
+            };
+            pipelines.push(pipeline);
+        }, this);
+        return pipelines;
+    },
+
+	
+    type: 'CodefreshIntegrationHandler'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-29 04:25:55</sys_created_on>
+        <sys_id>7f802d302f86201099b5d4a72799b6d8</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>CodefreshIntegrationHandler</sys_name>
+        <sys_package display_value="Codefresh" source="x_409723_codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_scope>
+        <sys_update_name>sys_script_include_7f802d302f86201099b5d4a72799b6d8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-03 04:06:02</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</application>
+        <file_path/>
+        <instance_id>177aaf7cdb7c77803050ac44d496196d</instance_id>
+        <instance_name>dev80375</instance_name>
+        <name>sys_script_include_7f802d302f86201099b5d4a72799b6d8</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_409723_codefresh.CodefreshIntegrationHandler&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description&gt;Implements extension point sn_devops.DevOpsOrchestrationToolIntegrationHandler&amp;#13;
+DevOpsOrchestrationToolIntegrationHandler - Endpoint Interface to determine right tool handler&lt;/description&gt;&lt;name&gt;CodefreshIntegrationHandler&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var CodefreshIntegrationHandler = Class.create();
+CodefreshIntegrationHandler.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+	handleTool: function(toolName) {
+        if (!gs.nil(toolName) &amp;&amp; toolName == 'x_409723_codefresh_Codefresh')
+            return true;
+        return false;
+    },
+
+	_getPipelineUrl : function(toolUrl, projectId, projectName, pipelineId, pipelineFullName) {
+		var pipelineName = pipelineFullName.substr(pipelineFullName.indexOf('/') +1);
+		return toolUrl + "/pipelines/edit/workflow?id= " + pipelineId +
+			"&amp;pipeline=" + pipelineName +
+			"&amp;projects=" + projectName +
+			"&amp;projectId=" + projectId;
+	},
+	
+    processPipelineDiscoveryApiResponse: function(toolUrl, pipelinePayload) {
+        var pipelines = [];
+        sn_devops.DevOpsLogger.log("CodefreshIntegrationHandler: processPipelineDiscoveryApiResponse -pipelinePayload: " + pipelinePayload);
+        var pipelinePayloadObject = JSON.parse(pipelinePayload);
+        pipelinePayloadObject.docs.forEach(function(codefreshPipeline) {
+			
+            var pipeline = {
+                name: codefreshPipeline.metadata.name,
+                url: this._getPipelineUrl(toolUrl, 
+							codefreshPipeline.metadata.projectId, codefreshPipeline.metadata.project,
+							codefreshPipeline.metadata.id, codefreshPipeline.metadata.name)
+            };
+            pipelines.push(pipeline);
+        }, this);
+        return pipelines;
+    },
+
+	
+    type: 'CodefreshIntegrationHandler'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-01-29 04:25:55&lt;/sys_created_on&gt;&lt;sys_id&gt;7f802d302f86201099b5d4a72799b6d8&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;CodefreshIntegrationHandler&lt;/sys_name&gt;&lt;sys_package display_value="Codefresh" source="x_409723_codefresh"&gt;7f6f36a02f02201099b5d4a72799b6ff&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Codefresh"&gt;7f6f36a02f02201099b5d4a72799b6ff&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_7f802d302f86201099b5d4a72799b6d8&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-02-03 04:06:02&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1343053136</payload_hash>
+        <record_name>CodefreshIntegrationHandler</record_name>
+        <reverted_from/>
+        <source>120765f02f86201099b5d4a72799b6aa</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-03 04:06:02</sys_created_on>
+        <sys_id>de7c8b162fc2641099b5d4a72799b650</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17766118e290000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-03 04:06:02</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>1a7c8b16fac26410667e2e0373c56f50</update_guid>
+        <update_guid_history>1a7c8b16fac26410667e2e0373c56f50:1343053136,1abb4b52fbc26410b0ca989c95ee3ec0:-1043082419,7b884f128fc26410b964005105c4b0be:-929400347,09112570f1862010779bd06e4f326e1d:453310727</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-04 00:53:28</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>01477b4b53734e06955533a6834aca81</sys_id>
+        <sys_metadata>7f802d302f86201099b5d4a72799b6d8</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CodefreshIntegrationHandler</sys_name>
+        <sys_package display_value="Codefresh" source="x_409723_codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_scope>
+        <sys_scope_delete display_value="">80c302cbf2a14ca9a1789ac9e9de0351</sys_scope_delete>
+        <sys_update_name>sys_script_include_7f802d302f86201099b5d4a72799b6d8</sys_update_name>
+        <sys_update_version display_value="sys_script_include_7f802d302f86201099b5d4a72799b6d8">de7c8b162fc2641099b5d4a72799b650</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-04 00:53:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_devops_integration_capability">
+    <sn_devops_integration_capability action="INSERT_OR_UPDATE">
+        <action display_value="Notification">4896a7899f720010e7ae5c20942e70f7</action>
+        <active>true</active>
+        <capability_mapping display_value="Codefresh-Orchestration">4aee8bd62fc2641099b5d4a72799b68f</capability_mapping>
+        <sub_flow_name>x_409723_codefresh.codefresh_process_notification</sub_flow_name>
+        <sys_class_name>sn_devops_integration_capability</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-05 00:35:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>6e7fe40b2f42e41099b5d4a72799b64c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_409723_codefresh.codefresh_process_notification</sys_name>
+        <sys_package display_value="Codefresh" source="x_409723_codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_scope>
+        <sys_update_name>sn_devops_integration_capability_6e7fe40b2f42e41099b5d4a72799b64c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-05 00:35:59</sys_updated_on>
+        <timeout>45000</timeout>
+        <tool_integration display_value="Codefresh">8a20ed342f46201099b5d4a72799b674</tool_integration>
+    </sn_devops_integration_capability>
+</record_update>

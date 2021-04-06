@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_extension_instance">
+    <sys_extension_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <order>100</order>
+        <point>sn_devops.DevOpsOrchestrationToolIntegrationHandler</point>
+        <script_include display_value="CodefreshIntegrationHandler">6c59e7e22f42a41099b5d4a72799b66d</script_include>
+        <sys_class_name>sys_extension_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-02-04 00:50:33</sys_created_on>
+        <sys_id>6459aba62f42a41099b5d4a72799b6c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>sn_devops.DevOpsOrchestrationToolIntegrationHandler</sys_name>
+        <sys_package display_value="Codefresh" source="x_409723_codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_scope>
+        <sys_update_name>sys_extension_instance_6459aba62f42a41099b5d4a72799b6c1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-02-04 00:50:33</sys_updated_on>
+    </sys_extension_instance>
+</record_update>
