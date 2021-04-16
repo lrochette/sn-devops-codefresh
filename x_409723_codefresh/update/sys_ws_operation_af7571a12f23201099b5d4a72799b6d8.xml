@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>POST</http_method>
+        <name>Change | Create</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+	var result;
+	var version = 'v1';
+	
+	var payload = request.body.data;
+	
+	if (! payload.cf_build_id) {
+		response.setBody(CodefreshErrorResponse.MISSING_BUILD_ID);
+		response.setStatus(404);
+		return;
+	} 
+	
+	result=(new CodefreshChangeHandler()).processCallback({version: version}, request.queryParams, payload);
+	
+	response.setBody(result || CodefreshErrorResponse.UNABLE_TO_PROCESS_ERROR);
+	response.setStatus((result && result.responseCode) || 400);
+	
+	if(result && result.responseCode)
+		delete result.responseCode;
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_409723_codefresh/codefresh/createChange</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/createChange</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-16 03:32:12</sys_created_on>
+        <sys_id>af7571a12f23201099b5d4a72799b6d8</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Change | Create</sys_name>
+        <sys_package display_value="Codefresh" source="x_409723_codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_scope>
+        <sys_update_name>sys_ws_operation_af7571a12f23201099b5d4a72799b6d8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-16 03:41:06</sys_updated_on>
+        <web_service_definition display_value="Codefresh">fbe4bd612f23201099b5d4a72799b6e2</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>
