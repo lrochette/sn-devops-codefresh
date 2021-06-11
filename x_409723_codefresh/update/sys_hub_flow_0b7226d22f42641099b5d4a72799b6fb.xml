@@ -6,13 +6,13 @@
         <annotation/>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
-        <compiler_build>glide-paris-06-24-2020__patch5-hotfix2-01-20-2021</compiler_build>
+        <compiler_build>glide-paris-06-24-2020__patch7a-03-29-2021</compiler_build>
         <copied_from/>
         <copied_from_name/>
         <description/>
         <internal_name>codefresh_discover_pipelines</internal_name>
         <label_cache>[{"name":"195eb3df-786f-49c5-b80a-8697fb86da6b.table_name","label":"3➛Import Request Table","reference":"sn_devops_import_request","reference_display":"Import Request","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"195eb3df-786f-49c5-b80a-8697fb86da6b.record","label":"3➛Import Request Record","reference":"sn_devops_import_request","reference_display":"Import Request","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"62d53b6e-5428-4c13-a462-eac535d41c3a.discoverpayload","label":"2➛discoverpayload","reference_display":"discoverpayload","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"77c8c0ca-6bca-48d5-880b-74610200e1f3"}},{"name":"subflow.current","label":"Input➛current","reference":"sn_devops_tool","reference_display":"DevOps Tool","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"ac610d3a-9e03-4004-b174-9a11823a267a","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"4620c466-b211-4571-a214-e4fe5f189cfd.error_message","label":"1➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"87687532-9e3d-4497-a88e-90f45bfb9adb"}},{"name":"4620c466-b211-4571-a214-e4fe5f189cfd.status","label":"1➛Status","reference_display":"Status","type":"choice","base_type":"choice","attributes":{"uiType":"choice","uiTypeLabel":"Choice","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5e478657-3a84-4a60-a92b-d3e80005ad34"}},{"name":"4620c466-b211-4571-a214-e4fe5f189cfd.Table","label":"1➛Import Request Table","reference":"sn_devops_import_request","reference_display":"Import Request","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"4620c466-b211-4571-a214-e4fe5f189cfd.Record","label":"1➛Import Request Record","reference":"sn_devops_import_request","reference_display":"Import Request","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
-        <latest_snapshot>2600d75a2fc2641099b5d4a72799b648</latest_snapshot>
+        <latest_snapshot>bf30b64b2f20301099b5d4a72799b6dc</latest_snapshot>
         <master_snapshot>779e47d62fc2641099b5d4a72799b60e</master_snapshot>
         <name>Codefresh Discover Pipelines</name>
         <natlang/>
@@ -59,10 +59,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-02-03 04:15:13</sys_created_on>
         <sys_id>459e83d62fc2641099b5d4a72799b6e6</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2021-02-03 04:21:41</sys_updated_on>
+        <sys_updated_on>2021-06-09 16:35:12</sys_updated_on>
         <ui_id>62d53b6e-5428-4c13-a462-eac535d41c3a</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=459e83d62fc2641099b5d4a72799b6e6"/>
@@ -94,10 +94,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-02-03 04:15:13</sys_created_on>
         <sys_id>b09e83d62fc2641099b5d4a72799b6d9</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2021-02-03 04:21:41</sys_updated_on>
+        <sys_updated_on>2021-06-09 16:35:12</sys_updated_on>
         <ui_id>4620c466-b211-4571-a214-e4fe5f189cfd</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=b09e83d62fc2641099b5d4a72799b6d9"/>
@@ -155,10 +155,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-02-03 04:15:13</sys_created_on>
         <sys_id>c19e83d62fc2641099b5d4a72799b6eb</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2021-02-03 04:21:41</sys_updated_on>
+        <sys_updated_on>2021-06-09 16:35:12</sys_updated_on>
         <ui_id>195eb3df-786f-49c5-b80a-8697fb86da6b</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=c19e83d62fc2641099b5d4a72799b6eb"/>
@@ -447,10 +447,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-02-03 04:15:13</sys_created_on>
         <sys_id>459e83d62fc2641099b5d4a72799b6e6</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2021-02-03 04:21:41</sys_updated_on>
+        <sys_updated_on>2021-06-09 16:35:12</sys_updated_on>
         <ui_id>62d53b6e-5428-4c13-a462-eac535d41c3a</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=459e83d62fc2641099b5d4a72799b6e6"/>
@@ -482,10 +482,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-02-03 04:15:13</sys_created_on>
         <sys_id>b09e83d62fc2641099b5d4a72799b6d9</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2021-02-03 04:21:41</sys_updated_on>
+        <sys_updated_on>2021-06-09 16:35:12</sys_updated_on>
         <ui_id>4620c466-b211-4571-a214-e4fe5f189cfd</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=b09e83d62fc2641099b5d4a72799b6d9"/>
@@ -543,10 +543,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-02-03 04:15:13</sys_created_on>
         <sys_id>c19e83d62fc2641099b5d4a72799b6eb</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_scope display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_scope>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2021-02-03 04:21:41</sys_updated_on>
+        <sys_updated_on>2021-06-09 16:35:12</sys_updated_on>
         <ui_id>195eb3df-786f-49c5-b80a-8697fb86da6b</ui_id>
     </sys_hub_action_instance>
     <sys_variable_value action="delete_multiple" query="document_key=c19e83d62fc2641099b5d4a72799b6eb"/>
@@ -696,7 +696,7 @@
     <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
         <plan>{"persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_subflow_plan","id":"b0ae87d62fc2641099b5d4a72799b611","name":"plan"}}</plan>
         <plan_id display_value="Codefresh Discover Pipelines">0b7226d22f42641099b5d4a72799b6fb</plan_id>
-        <snapshot>2600d75a2fc2641099b5d4a72799b648</snapshot>
+        <snapshot>bf30b64b2f20301099b5d4a72799b6dc</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-02-03 04:15:29</sys_created_on>
         <sys_domain>global</sys_domain>

@@ -20,13 +20,29 @@
 		return;
 	} 
 	
-	result=(new CodefreshChangeHandler()).processCallback({version: version}, request.queryParams, payload);
-	
-	response.setBody(result || CodefreshErrorResponse.UNABLE_TO_PROCESS_ERROR);
-	response.setStatus((result && result.responseCode) || 400);
-	
-	if(result && result.responseCode)
-		delete result.responseCode;
+	try {
+		var inputs = {};
+		inputs['cf_build_id'] = payload.cf_build_id; // String 
+		delete payload[cf_build_id];
+		input['fields']= payload;
+		
+		// Start Asynchronously: Uncomment to run in background. Code snippet will not have access to outputs.
+		sn_fd.FlowAPI.getRunner().subflow('x_409723_codefresh.createchange').inBackground().withInputs(inputs).run();
+				
+		// Execute Synchronously: Run in foreground. Code snippet has access to outputs.
+		// var result = sn_fd.FlowAPI.getRunner().subflow('x_409723_codefresh.createchange').inForeground().withInputs(inputs).run();
+		// var outputs = result.getOutputs();
+
+		// Current subflow has no outputs defined.		
+	} catch (ex) {
+		var message = ex.getMessage();
+		gs.error(message);
+		response.setBody(CodefreshErrorResponse.UNABLE_TO_PROCESS_ERROR);
+		response.setStatus (400);
+		return;
+	}	
+	CodefreshLogger.log("Codefresh Scripted REST API (createChange) -> Flow started with BUILD_ID" + payload.cf_build_id);
+
 
 })(request, response);]]></operation_script>
         <operation_uri>/api/x_409723_codefresh/codefresh/createChange</operation_uri>
@@ -42,14 +58,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-04-16 03:32:12</sys_created_on>
         <sys_id>af7571a12f23201099b5d4a72799b6d8</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Change | Create</sys_name>
         <sys_package display_value="Codefresh" source="x_409723_codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_package>
         <sys_policy/>
         <sys_scope display_value="Codefresh">7f6f36a02f02201099b5d4a72799b6ff</sys_scope>
         <sys_update_name>sys_ws_operation_af7571a12f23201099b5d4a72799b6d8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-04-16 03:41:06</sys_updated_on>
+        <sys_updated_on>2021-06-10 00:00:56</sys_updated_on>
         <web_service_definition display_value="Codefresh">fbe4bd612f23201099b5d4a72799b6e2</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>
